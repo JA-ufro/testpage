@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { PageView, Humedal } from './types';
+import { PageView } from './types';
 import { HUMEDALES_DATA } from './constants';
 import Header from './components/Header';
 import Footer from './components/Footer';
