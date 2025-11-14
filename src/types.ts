@@ -1,4 +1,3 @@
-
 export interface Testimonio {
   id: number;
   autor: string;
@@ -21,6 +20,7 @@ export interface Humedal {
   descripcionCorta: string;
   descripcionLarga: string;
   ubicacion: string;
+  mapaUrl: string;
   imagenPrincipal: string;
   floraYFauna: FloraFauna[];
   testimonios: Testimonio[];

@@ -1,12 +1,14 @@
-
 import React, { useState } from 'react';
 import { PageView } from '../types';
 
 interface HeaderProps {
   setCurrentView: (view: PageView) => void;
+  isLoggedIn: boolean;
+  onLoginClick: () => void;
+  onLogoutClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ setCurrentView }) => {
+const Header: React.FC<HeaderProps> = ({ setCurrentView, isLoggedIn, onLoginClick, onLogoutClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -40,20 +42,31 @@ const Header: React.FC<HeaderProps> = ({ setCurrentView }) => {
         </div>
 
         {/* Navegación de Escritorio */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-4 md:space-x-6">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <button
-                  onClick={() => handleNavClick(item.view)}
-                  className="text-lg font-medium text-gray-200 hover:text-white transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-white"
-                >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="hidden md:flex items-center space-x-6">
+          <nav>
+            <ul className="flex space-x-4 md:space-x-6">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <button
+                    onClick={() => handleNavClick(item.view)}
+                    className="text-lg font-medium text-gray-200 hover:text-white transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-white"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          {isLoggedIn ? (
+            <button onClick={onLogoutClick} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+              Cerrar Sesión
+            </button>
+          ) : (
+            <button onClick={onLoginClick} className="bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+              Admin
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Navegación Móvil */}
@@ -69,6 +82,17 @@ const Header: React.FC<HeaderProps> = ({ setCurrentView }) => {
               </button>
             </li>
           ))}
+          <li className="pt-2">
+             {isLoggedIn ? (
+              <button onClick={() => { onLogoutClick(); setIsMenuOpen(false); }} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Cerrar Sesión
+              </button>
+            ) : (
+              <button onClick={() => { onLoginClick(); setIsMenuOpen(false); }} className="bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Admin
+              </button>
+            )}
+           </li>
         </ul>
       </nav>
     </header>

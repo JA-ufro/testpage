@@ -1,4 +1,3 @@
-
 import { Humedal } from './types';
 
 export const HUMEDALES_DATA: Humedal[] = [
@@ -9,6 +8,7 @@ export const HUMEDALES_DATA: Humedal[] = [
     descripcionCorta: "Ubicado en el sector poniente de Temuco, este humedal es un ecosistema vital para la flora y fauna local.",
     descripcionLarga: "El humedal Fundo El Carmen representa un importante relicto de ecosistema palustre en medio de la trama urbana de Temuco. Su valor radica en la provisión de servicios ecosistémicos cruciales como la regulación hídrica, la mitigación de inundaciones, y ser un sumidero de carbono. Además, es un corredor biológico que permite el desplazamiento y refugio de numerosas especies, contribuyendo a la conectividad ecológica de la ciudad.",
     ubicacion: "Sector Fundo el Carmen, Temuco, Chile",
+    mapaUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12450.485459381504!2d-72.67380184496317!3d-38.71714401838647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d52bb7261aa7%3A0xd697ab6f32d48065!2sHumedal%20urbano%20Fundo%20el%20Carmen!5e0!3m2!1ses!2scl!4v1720810842771!5m2!1ses!2scl",
     imagenPrincipal: "https://picsum.photos/seed/fundoelcarmen/800/600",
     floraYFauna: [
       {
@@ -60,6 +60,7 @@ export const HUMEDALES_DATA: Humedal[] = [
     descripcionCorta: "Localizado en el macrosector de Chivilcán, es clave para la regulación hídrica y la vida silvestre de la zona.",
     descripcionLarga: "Las Vegas de Chivilcán conforman un sistema de humedales de gran extensión y complejidad, interactuando directamente con el desarrollo urbano circundante. Este espacio natural cumple un rol insustituible en la absorción de aguas lluvias, previniendo anegamientos en el sector. Su biodiversidad, aunque amenazada, aún alberga especies de aves y anfibios de importancia para la conservación, convirtiéndolo en un laboratorio natural y un aula al aire libre para la comunidad.",
     ubicacion: "Macrosector Chivilcán, Temuco, Chile",
+    mapaUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6228.087289568972!2d-72.61111626012478!3d-38.71352639206757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d3848a5a5aaf%3A0x51c2b2d9aad29a5a!2sHumedal%20Vegas%20de%20Chivilc%C3%A1n!5e0!3m2!1ses!2scl!4v1720810890250!5m2!1ses!2scl",
     imagenPrincipal: "https://picsum.photos/seed/chivilcan/800/600",
     floraYFauna: [
       {
